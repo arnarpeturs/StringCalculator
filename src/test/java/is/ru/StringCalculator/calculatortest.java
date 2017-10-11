@@ -42,7 +42,7 @@ public class calculatortest
 	@Test
 	public void testMoreNegativesNumbers(){
 		try{
-		calculator.add("“2,-4,3,-5");
+		calculator.add("2,-4,3,-5");
 		}
 		catch (RuntimeException ex){
 		assertEquals("Negatives not allowed: -4,-5", ex.getMessage());
