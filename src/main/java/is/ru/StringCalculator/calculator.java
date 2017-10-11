@@ -3,17 +3,12 @@ package is.ru.StringCalculator;
 public class calculator	
 {
 	public static int add(String text) {
-		if(text == ""){
-			return 0;
+		if(text.contains(",")) {
+			return total(text);
 		}
 		else{
-			if(text.contains(",")) {
-				return total(text);
-			}
-			else{
-			 	return Integer.parseInt(text);
-			}   
-		}
+		 	return getInt(text);
+		}   
 	}
 	private static int total(String text){
 		String[] numbers = text.split(",");
@@ -22,5 +17,13 @@ public class calculator
 			sum = sum + Integer.parseInt(number);
 		}
 		return sum;
+	}
+	private static int getInt(String text){
+		if(text == ""){
+			return 0;
+		}
+		else{
+			return Integer.parseInt(text);
+		}
 	}
 }
