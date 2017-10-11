@@ -3,21 +3,24 @@ package is.ru.StringCalculator;
 public class calculator	
 {
 	public static int add(String text) {
-		int sum = 0;
 		if(text == ""){
-			return sum;
+			return 0;
 		}
 		else{
 			if(text.contains(",")) {
-				String[] numbers = text.split(",");
-				for (String number : numbers) {
-					sum = sum + Integer.parseInt(number);
-				}
+				return total(text);
 			}
 			else{
 			 	return Integer.parseInt(text);
-			}
+			}   
 		}
-		return sum;   
+	}
+	private static int total(String text){
+		String[] numbers = text.split(",");
+		int sum = 0;
+		for (String number : numbers) {
+			sum = sum + Integer.parseInt(number);
+		}
+		return sum;
 	}
 }
