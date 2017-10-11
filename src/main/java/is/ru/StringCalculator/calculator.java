@@ -3,7 +3,7 @@ package is.ru.StringCalculator;
 public class calculator	
 {
 	public static int add(String text) {
-		if(text.contains(",")) {
+		if(text.contains(",|\\\n")) {
 			return total(text);
 		}
 		else{
@@ -14,7 +14,12 @@ public class calculator
 		String[] numbers = text.split(",|\\\n");
 		int sum = 0;
 		for (String number : numbers) {
-			sum = sum + Integer.parseInt(number);
+			if(number.contains("-")){
+				throw Exception("Negatives not allowed: " + number);
+			}
+			else{
+				sum = sum + Integer.parseInt(number);
+			}
 		}
 		return sum;
 	}
