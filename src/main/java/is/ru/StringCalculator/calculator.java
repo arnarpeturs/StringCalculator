@@ -11,7 +11,7 @@ public class calculator
 		}   
 	}
 	private static int total(String text){
-		String[] numbers = text.split(",");
+		String[] numbers = text.split(",|\\\n");
 		int sum = 0;
 		for (String number : numbers) {
 			sum = sum + Integer.parseInt(number);
