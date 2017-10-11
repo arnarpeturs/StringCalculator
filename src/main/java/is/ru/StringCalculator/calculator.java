@@ -37,7 +37,7 @@ public class calculator
 	}
 
 	private static int getInt(String text){
-		if(text == ""){
+		if(text == "" || Integer.parseInt(text) > 1000){
 			return 0;
 		}
 		else{

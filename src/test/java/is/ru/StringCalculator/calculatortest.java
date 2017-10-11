@@ -51,6 +51,6 @@ public class calculatortest
 
 	@Test
 	public void testValuesBiggerThenOneThousand(){
-		assertEquals(2, calculator.add("1001,2"))
+		assertEquals(2, calculator.add("1001,2"));
 	}
 }
