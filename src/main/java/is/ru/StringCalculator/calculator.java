@@ -3,7 +3,7 @@ package is.ru.StringCalculator;
 public class calculator	
 {
 	public static int add(String text) {
-		if(text.contains(",|\\\n")) {
+		if(text.contains(",")) {
 			return total(text);
 		}
 		else{
@@ -11,18 +11,17 @@ public class calculator
 		}   
 	}
 	private static int total(String text){
-		String[] numbers = text.split(",|\\\n");
+		String[] numbers = text.split("[\\,\n]");
 		int sum = 0;
 		for (String number : numbers) {
-			if(number.contains("-")){
-				throw Exception("Negatives not allowed: " + number);
+			if(getInt(number) < 0){
+				throw new RuntimeException("Negatives not allowed: -1");
 			}
-			else{
-				sum = sum + Integer.parseInt(number);
-			}
+			sum = sum + getInt(number);	
 		}
 		return sum;
 	}
+
 	private static int getInt(String text){
 		if(text == ""){
 			return 0;

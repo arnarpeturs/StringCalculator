@@ -28,9 +28,15 @@ public class calculatortest
 	public void testNewLineCharacter() {
 		assertEquals(6, calculator.add("1\n2,3"));
 	}
-	@Test(expected = Exception.class) 
-	public void testNegativeNumbers() {
-		assertEquals()
+	
+	@Test
+	public void testNegativesNumbers(){
+		try{
+		calculator.add("-1,2");
+		}
+		catch (RuntimeException ex){
+		assertEquals("Negatives not allowed: -1", ex.getMessage());
+		}
 	}
-
+	
 }
