@@ -20,7 +20,8 @@ public class calculatortest
 		assertEquals(3, calculator.add("1,2"));
 	}
 
-	@Test void testThreeNumbers() {
-		assertEquals(6, calculator.add("1,2,3"))
+	@Test
+	public void testThreeNumbers() {
+		assertEquals(6, calculator.add("1,2,3"));
 	}
 }
