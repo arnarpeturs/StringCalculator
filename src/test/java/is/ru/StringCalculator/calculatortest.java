@@ -53,4 +53,10 @@ public class calculatortest
 	public void testValuesBiggerThenOneThousand(){
 		assertEquals(2, calculator.add("1001,2"));
 	}
+
+	@Test
+	public void testUpgradedDelimiter(){
+		assertEquals(2, calculator.add("//;\n1;2"));
+	}
+
 }
