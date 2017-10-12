@@ -23,7 +23,6 @@ public class calculator
             if(number.contains("/") || number.isEmpty()){
                 continue;
             }
-            System.out.println(number);
             if(getInt(number) < 0){
                 negative = true;
                 negativeNumbers.add(number);
