@@ -7,7 +7,7 @@ import java.util.List;
 public class calculator
 {
     public static int add(String text) {
-        if(text.contains(",") || text.contains("\n") || text.contains(";")) {
+        if(containsDelmitor(text)) {
             return total(text);
         }
         else{
@@ -56,5 +56,14 @@ public class calculator
         }
         errorMessage.setLength(errorMessage.length()-1);
         throw new RuntimeException(errorMessage.toString());
+    }
+    private static boolean containsDelmitor(String text){
+    	if(text.contains(",") || text.contains("\n") || text.contains(";")){
+    		return true;
+    	}
+    	else{
+    		return false;
+    	}
+
     }
 }
