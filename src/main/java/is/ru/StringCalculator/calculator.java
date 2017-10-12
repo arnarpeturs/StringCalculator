@@ -57,12 +57,6 @@ public class calculator
         throw new RuntimeException(errorMessage.toString());
     }
     private static boolean containsDelmitor(String text){
-    	if(text.contains(",") || text.contains("\n") || text.contains(";")){
-    		return true;
-    	}
-    	else{
-    		return false;
-    	}
-
+    	return (text.contains(",") || text.contains("\n") || text.contains(";"));
     }
 }
