@@ -56,7 +56,7 @@ public class calculatortest
 
 	@Test
 	public void testUpgradedDelimiter(){
-		assertEquals(2, calculator.add("//;\n1;2"));
+		assertEquals(3, calculator.add("//;\n1;2"));
 	}
 
 }
